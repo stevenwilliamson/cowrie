@@ -75,10 +75,6 @@ class CowrieServiceMaker(object):
         Construct a TCPServer from a factory defined in Cowrie.
         """
 
-        if os.name == 'posix' and os.getuid() == 0:
-            print('ERROR: You must not run cowrie as root!')
-            sys.exit(1)
-
         cfg = readConfigFile(options["config"])
 
         top_service = service.MultiService()
